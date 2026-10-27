@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <title>문장숲 — 오늘의 글쓰기</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="문장숲 홈"><span class="brand-mark">ㅁ</span> 문장숲</a>
+    <nav aria-label="주 메뉴"><a class="active" href="#home">글쓰기</a><a href="#guide">글쓰기 안내</a></nav>
+    <button class="profile" aria-label="내 프로필">나</button>
+  </header>
+
+  <main id="home">
+    <section class="welcome">
+      <div class="welcome-copy"><p class="eyebrow">TUESDAY, OCTOBER 28</p><h1>생각을 꺼내<br>문장으로 심어 보세요<span>.</span></h1><p class="subtitle">하루 한 편, 나만의 문장숲을 가꾸는 시간</p></div>
+      <div class="welcome-art" aria-hidden="true"><span class="sun"></span><span class="hill hill-back"></span><span class="hill hill-front"></span><span class="sprout">✳</span></div>
+    </section>
+
+    <div class="layout">
+      <section class="editor-card" aria-labelledby="write-title">
+        <div class="card-heading"><div><p class="eyebrow">TODAY'S WRITING</p><h2 id="write-title">오늘의 글쓰기</h2></div><span class="date-pill">10월 28일 · 화요일</span></div>
+        <div class="prompt"><span class="prompt-icon">✦</span><div><strong>오늘의 주제</strong><p id="topic">내가 오래 간직하고 싶은 순간</p></div><button id="new-topic" class="text-button">주제 바꾸기 ↗</button></div>
+        <label class="sr-only" for="title">글 제목</label><input id="title" class="title-input" placeholder="제목을 지어 주세요" maxlength="60">
+        <label class="sr-only" for="writing">글 내용</label><textarea id="writing" placeholder="오늘의 주제를 천천히 떠올려 보세요.&#10;&#10;완벽한 문장보다 솔직한 마음이 먼저예요."></textarea>
+        <div class="editor-footer"><div><span id="char-count">0자</span><span class="divider">·</span><span id="word-count">0문장</span><span id="save-status" class="save-status">자동 저장 준비</span></div><div class="editor-actions"><button id="check-writing" class="button button-light">글 다듬기</button><button id="save-writing" class="button button-dark">초안 저장 <span>↗</span></button></div></div>
+      </section>
+
+      <aside class="side-column">
+        <section class="side-card streak-card"><div class="side-title"><h3>나의 기록</h3><span class="leaf">✳</span></div><div class="streak-number"><strong id="saved-count">0</strong><span>편의 글을 저장했어요</span></div><div class="week-row" aria-label="이번 주 기록"><span class="day done">월<i>✓</i></span><span class="day today">화<i>•</i></span><span class="day">수<i>·</i></span><span class="day">목<i>·</i></span><span class="day">금<i>·</i></span><span class="day">토<i>·</i></span><span class="day">일<i>·</i></span></div><p class="small-note">매일 조금씩, 문장이 자라나요.</p></section>
+        <section class="side-card tip-card" id="guide"><div class="tip-label"><span>오늘의 글쓰기 팁</span><span>01 / 03</span></div><h3>첫 문장이 어렵다면<br>감각부터 적어 보세요.</h3><p>그날의 빛, 소리, 냄새처럼 작은 장면이 좋은 글의 시작이 돼요.</p><button id="next-tip" class="tip-next" aria-label="다음 글쓰기 팁">↗</button><div class="tip-dots"><i class="selected"></i><i></i><i></i></div></section>
+      </aside>
+    </div>
+
+    <section class="recent-section"><div class="section-heading"><div><p class="eyebrow">YOUR LITTLE FOREST</p><h2>최근에 쓴 글</h2></div><button class="text-button" id="view-all">모두 보기 <span>→</span></button></div><div id="recent-list" class="recent-list"><div class="empty-state"><span>✎</span><p>아직 저장한 글이 없어요.<br>오늘의 첫 문장을 시작해 볼까요?</p></div></div></section>
+    <footer>문장숲 <span>·</span> 매일 쓰는 마음이 나만의 숲이 됩니다.</footer>
+  </main>
+
+  <dialog id="feedback-dialog"><div class="dialog-head"><div><p class="eyebrow">WRITING CHECK</p><h2>글 다듬기</h2></div><button id="close-dialog" aria-label="닫기">×</button></div><div id="feedback-content"></div></dialog>
+  <script src="app.js"></script>
+</body>
+</html>
